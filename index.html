@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Helena Presents Helena</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single+Ink:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #0e0e0e;
+        color: #f0f0f0;
+        font-family: "inter";
+      }
+      #draggable {
+        width: 100px;
+        height: 100px;
+        background-color: #3498db;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        cursor: pointer;
+        user-select: none; /* prevent text selection while dragging */
+      }
+      .notClickable {
+        padding-left: 1%;
+        padding-right: 1%;
+        cursor: default;
+      }
+      /* left:0; right:0; centers it but then it lags or whateva, fix this */
+      .toggleDiv {
+        position: absolute;
+        background-color: #0e0e0e;
+        border-style: solid;
+        border-color: #f0f0f0;
+        border-width: 1%;
+        border-radius: 20px;
+        padding: 2%;
+        padding-bottom: 5%;
+        width: 30%;
+        height: 20%;
+      }
+      #draggableAbout {
+        display: none;
+      }
+      #draggableExperience {
+        display: none;
+      }
+      #draggableProjects {
+        display: none;
+      }
+      .clickable:hover {
+        color: pink;
+        cursor: pointer;
+      }
+      h1 {
+        margin-bottom: 1%;
+      }
+      h3 {
+        margin-top: 1%;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div style="text-align: center; align-items: center">
+          <div style="text-align: center; align-items: center">
+            <h1><b>Helena Schuler</b></h1>
+            <h3>Full Stack Developer</h3>
+          </div>
+    
+          <div
+            style="
+              display: flex;
+              text-align: center;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <p id="about" class="clickable" onclick="toggleDiv(draggableAbout)">
+              about
+            </p>
+            <p class="notClickable">|</p>
+            <p
+              id="experience"
+              class="clickable"
+              onclick="toggleDiv(draggableExperience)"
+            >
+              experience
+            </p>
+            <p class="notClickable">|</p>
+            <p
+              id="projects"
+              class="clickable"
+              onclick="toggleDiv(draggableProjects)"
+            >
+              projects
+            </p>
+          </div>
+      </div>
+
+      <!-- <div id="draggable">Drag Me!</div> -->
+      <div id="draggableAbout" class="toggleDiv">
+        <div style="display: flex; justify-content: space-between">
+          <h1>About</h1>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-x-icon lucide-x"
+            style="margin-top: auto; margin-bottom: auto"
+          >
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </div>
+        <p>
+          Hello! I'm Helena. I'm a senior in computer science with a
+          concentration in software engineering. Web development is my specialty
+          (❁´◡`❁)
+        </p>
+      </div>
+      <div id="draggableExperience" class="toggleDiv">
+        <div style="display: flex; justify-content: space-between">
+          <h1>Experience</h1>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-x-icon lucide-x"
+            style="margin-top: auto; margin-bottom: auto"
+          >
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </div>
+        <p>Hire me to unlock this window ✌️(*´ω｀*)</p>
+      </div>
+      <div id="draggableProjects" class="toggleDiv">
+        <div style="display: flex; justify-content: space-between">
+          <h1>Projects</h1>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-x-icon lucide-x"
+            style="margin-top: auto; margin-bottom: auto"
+          >
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </div>
+        <p>
+          Want to see more? Check out my
+          <a href="https://github.com/hschuler13">GitHub</a>
+        </p>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
