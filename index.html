@@ -36,6 +36,9 @@
       /* left:0; right:0; centers it but then it lags or whateva, fix this */
       .toggleDiv {
         position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
         background-color: #0e0e0e;
         border-style: solid;
         border-color: #f0f0f0;
@@ -45,6 +48,7 @@
         padding-bottom: 5%;
         width: 30%;
         height: 20%;
+        user-select: none;
       }
       #draggableAbout {
         display: none;
@@ -59,11 +63,26 @@
         color: pink;
         cursor: pointer;
       }
+      .lucide-x:hover{
+        color: pink;
+      }
       h1 {
         margin-bottom: 1%;
       }
       h3 {
         margin-top: 1%;
+      }
+      a:link{
+        color: #f0f0f0;
+      }
+      a:hover{
+        color: pink;
+      }
+      a:active{
+        color: pink;
+      }
+      a:visited{
+        color: pink;
       }
     </style>
   </head>
@@ -121,6 +140,7 @@
             stroke-linejoin="round"
             class="lucide lucide-x-icon lucide-x"
             style="margin-top: auto; margin-bottom: auto"
+            onclick="toggleDiv(draggableAbout)"
           >
             <path d="M18 6 6 18" />
             <path d="m6 6 12 12" />
@@ -147,6 +167,7 @@
             stroke-linejoin="round"
             class="lucide lucide-x-icon lucide-x"
             style="margin-top: auto; margin-bottom: auto"
+            onclick="toggleDiv(draggableExperience)"
           >
             <path d="M18 6 6 18" />
             <path d="m6 6 12 12" />
@@ -169,6 +190,7 @@
             stroke-linejoin="round"
             class="lucide lucide-x-icon lucide-x"
             style="margin-top: auto; margin-bottom: auto"
+            onclick="toggleDiv(draggableProjects)"
           >
             <path d="M18 6 6 18" />
             <path d="m6 6 12 12" />

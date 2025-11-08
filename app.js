@@ -1,4 +1,5 @@
 //TODO: fix divs so they stay bounded within the frame
+// https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/
 const draggable = document.getElementById('draggable');
 const draggableAbout = document.getElementById('draggableAbout');
 const draggableExperience = document.getElementById('draggableExperience');
@@ -16,6 +17,7 @@ divName.addEventListener('mousedown', (e) => {
 });
 
 function mouseMoveHandler(e) {
+    divName.style.transform = 'none';
     divName.style.left = `${e.clientX - offsetX}px`;
     divName.style.top = `${e.clientY - offsetY}px`;
     divName.style.position = 'absolute';
